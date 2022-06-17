@@ -9,7 +9,7 @@ describe("Test of <FirstApp />", () => {
 		expect(container).toMatchSnapshot();
 	});
 
-	test("must show the title in h1", () => {
+	test("Should show title and data-testid", () => {
 		const title = "Hello World";
 		// eslint-disable-next-line no-unused-vars
 		const { container, getByText, getByTestId } = render(<FirstApp title={title} />);
