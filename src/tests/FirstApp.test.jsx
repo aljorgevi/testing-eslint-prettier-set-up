@@ -3,7 +3,7 @@ import { render } from "@testing-library/react";
 import FirstApp from "../components/FirstApp";
 
 describe("Test of <FirstApp />", () => {
-	test("must match eith snapshot", () => {
+	test.skip("must match eith snapshot", () => {
 		const title = "Hello World";
 		const { container } = render(<FirstApp title={title} />);
 		expect(container).toMatchSnapshot();
@@ -11,10 +11,18 @@ describe("Test of <FirstApp />", () => {
 
 	test("must show the title in h1", () => {
 		const title = "Hello World";
-		const { container, getByText } = render(<FirstApp title={title} />);
+		// eslint-disable-next-line no-unused-vars
+		const { container, getByText, getByTestId } = render(<FirstApp title={title} />);
 		expect(getByText(title)).toBeInTheDocument();
+		expect(getByTestId("test-title")).toHaveTextContent(title);
 
-		const h1 = container.querySelector("h1");
-		expect(h1.innerHTML).toBe(title);
+		// const h1 = container.querySelector("h1");
+		// expect(h1.innerHTML).toBe(title);
+	});
+
+	test("should show the subtitle send by props", () => {
+		const subtitle = "Hello World";
+		const { getByText } = render(<FirstApp subTitle={subtitle} />);
+		expect(getByText(subtitle)).toBeInTheDocument();
 	});
 });
