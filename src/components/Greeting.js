@@ -3,9 +3,7 @@ import { useState } from "react";
 export default function Greeting() {
 	const [changedText, setChangedText] = useState(false);
 
-	const changeTextHandler = () => {
-		setChangedText(true);
-	};
+	const changeTextHandler = () => setChangedText(true);
 
 	return (
 		<div>

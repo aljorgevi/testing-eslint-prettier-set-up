@@ -36,6 +36,7 @@ describe("Greeting component", () => {
 		userEvent.click(buttonElemt);
 
 		// Assert
+		//
 		const outputElement = screen.getByText("Changed!");
 		expect(outputElement).toBeInTheDocument();
 	});
