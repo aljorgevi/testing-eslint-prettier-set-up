@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 export default function Greeting() {
 	const [changedText, setChangedText] = useState(false);
