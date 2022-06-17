@@ -1,9 +1,8 @@
-import Greeting from "./components/Greeting";
 import FirstApp from "./components/FirstApp";
 
 function App() {
 	return (
-		<div className="App">
+		<div className="App ">
 			<FirstApp title="Hello, I'm Vegeta" />
 		</div>
 	);
