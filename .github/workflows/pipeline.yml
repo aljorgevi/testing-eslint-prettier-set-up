@@ -45,6 +45,7 @@ jobs:
         run: npm ci
       - name: build
         run: echo "npm run build"
+      - run: ls -la
       - uses: actions/upload-artifact@v3
         with:
           name: build
