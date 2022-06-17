@@ -33,7 +33,8 @@ describe("test CounterApp", () => {
 		const buttonIncrement = screen.getByText("+1");
 		fireEvent.click(buttonIncrement);
 		// screen.debug();
-		const buttonReset = screen.getByText("Reset");
+		const buttonReset = screen.getByRole("button", { name: "btn-reset" });
+		// const buttonReset = screen.getByText("Reset");
 		fireEvent.click(buttonReset);
 		expect(screen.getByText(initialValue)).toBeTruthy();
 	});
