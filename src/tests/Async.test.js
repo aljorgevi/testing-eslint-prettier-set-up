@@ -1,5 +1,4 @@
 import { render, screen } from "@testing-library/react";
-import "@testing-library/jest-dom";
 import Async from "../components/Async";
 
 describe("Async component", () => {
