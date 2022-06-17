@@ -11,6 +11,7 @@ export default function FirstApp({ title, subTitle, name }) {
 }
 
 FirstApp.propTypes = {
+	name: PropTypes.string.isRequired,
 	title: PropTypes.string.isRequired,
 	subTitle: PropTypes.string,
 };
