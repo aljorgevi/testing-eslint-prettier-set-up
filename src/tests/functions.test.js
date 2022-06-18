@@ -1,3 +1,4 @@
+import { getGifs } from "../helpers/getGifs";
 import { getActiveUser, getHeroeById, getHoresByOwner, getUser } from "../utils";
 
 describe("testing functions", () => {
@@ -38,5 +39,15 @@ describe("testing functions", () => {
 		const hero = getHoresByOwner(owner);
 
 		expect(hero).toHaveLength(3);
+	});
+
+	test("getGifts should return an array of gifts", async () => {
+		const gifts = await getGifs("one punch");
+		expect(gifts.length).toBeGreaterThan(0);
+		expect(gifts[0]).toEqual({
+			id: expect.any(String),
+			title: expect.any(String),
+			url: expect.any(String),
+		});
 	});
 });
