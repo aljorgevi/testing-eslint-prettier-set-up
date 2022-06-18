@@ -49,7 +49,7 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: build
-          path: ./buid
+          path: .
 
   test:
     needs: [lint, build]
@@ -67,7 +67,7 @@ jobs:
       - uses: actions/download-artifact@v3
         with:
           name: build
-          path: ./buid
+          path: .
       - name: Test
         run: npm test
 
